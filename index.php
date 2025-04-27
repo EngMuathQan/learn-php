@@ -6,7 +6,7 @@ use Framework\DB;
 
 $db = new DB;
 
-$data = $db->get("select * from users");
+$data = $db->table('users')->where('id', 1)->where('active', '!=', 'active')->get();
 
 echo "<pre>";
 print_r($data);
